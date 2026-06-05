@@ -1,0 +1,34 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "devCommand": "next dev",
+  "installCommand": "npm install",
+  "outputDirectory": ".next",
+  "env": {
+    "NEXT_PUBLIC_SUPABASE_URL": "@next_public_supabase_url",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@next_public_supabase_anon_key",
+    "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key",
+    "FOUNDER_EMAIL": "@founder_email",
+    "FOUNDER_NAME": "@founder_name",
+    "RESEND_API_KEY": "@resend_api_key",
+    "SMTP_HOST": "@smtp_host",
+    "SMTP_PORT": "@smtp_port",
+    "SMTP_USER": "@smtp_user",
+    "SMTP_PASSWORD": "@smtp_password",
+    "SMTP_FROM": "@smtp_from",
+    "NEXT_PUBLIC_APP_URL": "@next_public_app_url"
+  },
+  "regions": ["iad1"],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Frame-Options",           "value": "DENY" },
+        { "key": "X-Content-Type-Options",     "value": "nosniff" },
+        { "key": "Referrer-Policy",            "value": "strict-origin-when-cross-origin" },
+        { "key": "X-XSS-Protection",           "value": "1; mode=block" },
+        { "key": "Permissions-Policy",         "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    }
+  ]
+}
