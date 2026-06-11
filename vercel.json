@@ -4,20 +4,6 @@
   "devCommand": "next dev",
   "installCommand": "npm install",
   "outputDirectory": ".next",
-  "env": {
-    "NEXT_PUBLIC_SUPABASE_URL": "https://zxctegxqwthresnqyfzd.supabase.co",
-    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "sb_publishable_blyf1Gf_icyf9M0kWYwywA_b-xJGTCl",
-    "SUPABASE_SERVICE_ROLE_KEY": "sb_secret_LbO1MtM_Iu1fHaCFA-bvJw_2x3zeFFt",
-    "FOUNDER_EMAIL": "founder@chechnology.qzz.io",
-    "FOUNDER_NAME": "Afeez Olatomiwa Oladiti",
-    "RESEND_API_KEY": "re_KLwui6FQ_EvJBYGUQV7LtUrYgQcTC2RpV",
-    "SMTP_HOST": "smtp.gmail.com",
-    "SMTP_PORT": "587",
-    "SMTP_USER": "chechnologybox@gmail.com",
-    "SMTP_PASSWORD": "gmgg rzjw nxzm uznx",
-    "SMTP_FROM": "chechnologybox@gmail.com",
-    "NEXT_PUBLIC_APP_URL": "https://chechnology.qzz.io"
-  },
   "regions": ["iad1"],
   "headers": [
     {
