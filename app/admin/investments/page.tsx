@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { createServerClient } from '@/lib/supabase/server';
 import AdminTable from '@/components/ui/AdminTable';
 
@@ -9,13 +10,13 @@ export default async function AdminInvestmentsPage() {
     .order('created_at', { ascending: false });
 
   const columns = [
-    { key: 'full_name',                 label: 'Investor' },
-    { key: 'email',                     label: 'Email' },
-    { key: 'investor_type',             label: 'Type' },
-    { key: 'project_of_interest',       label: 'Project' },
-    { key: 'intended_investment_amount',label: 'Amount' },
-    { key: 'preferred_investment_stage',label: 'Stage' },
-    { key: 'country',                   label: 'Country' },
+    { key: 'full_name', label: 'Investor' },
+    { key: 'email', label: 'Email' },
+    { key: 'investor_type', label: 'Type' },
+    { key: 'project_of_interest', label: 'Project' },
+    { key: 'intended_investment_amount', label: 'Amount' },
+    { key: 'preferred_investment_stage', label: 'Stage' },
+    { key: 'country', label: 'Country' },
     {
       key: 'created_at',
       label: 'Date',

@@ -1,4 +1,5 @@
 // app/admin/sponsorships/page.tsx
+export const dynamic = 'force-dynamic';
 import { createServerClient } from '@/lib/supabase/server';
 import AdminTable from '@/components/ui/AdminTable';
 
@@ -10,12 +11,12 @@ export default async function AdminSponsorshipsPage() {
     <AdminTable
       data={(data || []) as unknown as Record<string, unknown>[]}
       columns={[
-        { key: 'full_name',       label: 'Contact' },
-        { key: 'email',           label: 'Email' },
-        { key: 'company_name',    label: 'Company' },
+        { key: 'full_name', label: 'Contact' },
+        { key: 'email', label: 'Email' },
+        { key: 'company_name', label: 'Company' },
         { key: 'project_to_sponsor', label: 'Project' },
         { key: 'sponsorship_budget', label: 'Budget' },
-        { key: 'industry',        label: 'Industry' },
+        { key: 'industry', label: 'Industry' },
         { key: 'created_at', label: 'Date', render: (v: unknown) => new Date(v as string).toLocaleDateString() },
       ]}
       tableName="sponsorship_inquiries"
