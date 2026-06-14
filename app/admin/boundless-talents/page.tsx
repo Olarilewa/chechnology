@@ -1,14 +1,23 @@
-export const dynamic = 'force-dynamic';
-import { createServerClient } from '@/lib/supabase/server';
+'use client';
+import { useEffect, useState } from 'react';
+import { createClient } from '@/lib/supabase/client';
 import AdminTable from '@/components/ui/AdminTable';
 
-export default async function AdminBoundlessTalentsPage() {
-  const supabase = createServerClient();
-  const { data } = await supabase.from('boundless_talent_registrations').select('*').order('created_at', { ascending: false });
+export default function AdminBoundlessTalentsPage() {
+  const [data, setData] = useState<Record<string, unknown>[]>([]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    createClient().from('boundless_talent_registrations')
+      .select('*').order('created_at', { ascending: false })
+      .then(({ data: rows }) => { setData(rows || []); setLoading(false); });
+  }, []);
+
+  if (loading) return <p className="text-obsidian-400 p-8">Loading...</p>;
   return (
-    <AdminTable
-      data={(data || []) as unknown as Record<string, unknown>[]}
+    <AdminTable data={data} tableName="boundless_talent_registrations"
+      title="Boundless Talent Registrations"
+      searchFields={['full_name', 'email', 'skill_category', 'country']}
       columns={[
         { key: 'full_name', label: 'Name' },
         { key: 'email', label: 'Email' },
@@ -16,11 +25,7 @@ export default async function AdminBoundlessTalentsPage() {
         { key: 'years_of_experience', label: 'Experience' },
         { key: 'country', label: 'Country' },
         { key: 'availability', label: 'Availability' },
-        { key: 'created_at', label: 'Date', render: (v: unknown) => new Date(v as string).toLocaleDateString() },
-      ]}
-      tableName="boundless_talent_registrations"
-      title="Boundless Talent Registrations"
-      searchFields={['full_name', 'email', 'skill_category', 'country']}
-    />
+        { key: 'created_at', label: 'Date', render: (v) => new Date(v as string).toLocaleDateString() },
+      ]} />
   );
 }

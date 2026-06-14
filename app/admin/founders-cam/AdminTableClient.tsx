@@ -4,11 +4,11 @@ import AdminTable from '@/components/ui/AdminTable';
 import type { FoundersCamApplication } from '@/types/database';
 
 const columns = [
-  { key: 'full_name',         label: 'Name' },
-  { key: 'email',             label: 'Email' },
+  { key: 'full_name', label: 'Name' },
+  { key: 'email', label: 'Email' },
   { key: 'role_applying_for', label: 'Role' },
-  { key: 'country',           label: 'Country' },
-  { key: 'experience_level',  label: 'Experience' },
+  { key: 'country', label: 'Country' },
+  { key: 'experience_level', label: 'Experience' },
   {
     key: 'created_at',
     label: 'Applied',
