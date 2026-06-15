@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const founderEmail = process.env.FOUNDER_EMAIL || '';
-const founderName  = process.env.FOUNDER_NAME  || 'The Founder';
+const founderName = process.env.FOUNDER_NAME || 'The Founder';
 
 export default function ContactPage() {
   return (
@@ -73,12 +73,12 @@ export default function ContactPage() {
               <div className="glass-card border border-white/8 p-7">
                 <h3 className="font-display font-bold text-white text-lg mb-5">Social Links</h3>
                 <div className="space-y-3">
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+                  <a href="https://x.com/chechnology?s=21&t=N1f1sMx4Y42XFuyrY-rbDg" target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-3 p-3 rounded-xl bg-white/3 border border-white/5 hover:border-brand-500/25 transition-all group">
                     <Twitter size={16} className="text-obsidian-400 group-hover:text-brand-400 transition-colors" />
                     <span className="text-sm text-obsidian-400 group-hover:text-white transition-colors">Follow on X (Twitter)</span>
                   </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                  <a href="https://www.linkedin.com/company/chechnology/" target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-3 p-3 rounded-xl bg-white/3 border border-white/5 hover:border-brand-500/25 transition-all group">
                     <Linkedin size={16} className="text-obsidian-400 group-hover:text-brand-400 transition-colors" />
                     <span className="text-sm text-obsidian-400 group-hover:text-white transition-colors">Connect on LinkedIn</span>
