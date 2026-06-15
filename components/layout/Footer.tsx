@@ -94,7 +94,7 @@ export default function Footer() {
             </ul>
             <div className="mt-6 flex items-center gap-3">
               <Link
-                href="https://twitter.com"
+                href="https://x.com/chechnology?s=21&t=N1f1sMx4Y42XFuyrY-rbDg"
                 target="_blank"
                 className="w-8 h-8 rounded-lg bg-white/5 hover:bg-brand-500/20 border border-white/5 hover:border-brand-500/30 flex items-center justify-center transition-all"
                 aria-label="Twitter/X"
@@ -102,7 +102,7 @@ export default function Footer() {
                 <Twitter size={14} className="text-obsidian-400 hover:text-brand-400" />
               </Link>
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/chechnology/"
                 target="_blank"
                 className="w-8 h-8 rounded-lg bg-white/5 hover:bg-brand-500/20 border border-white/5 hover:border-brand-500/30 flex items-center justify-center transition-all"
                 aria-label="LinkedIn"
