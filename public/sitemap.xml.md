@@ -1,1 +1,0 @@
-&lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt; &lt;url&gt; &lt;loc&gt;https://chechnology.vercel.app/&lt;/loc&gt; &lt;lastmod&gt;2026-06-18&lt;/lastmod&gt; &lt;changefreq&gt;weekly&lt;/changefreq&gt; &lt;priority&gt;1.0&lt;/priority&gt; &lt;/url&gt; &lt;/urlset&gt;
