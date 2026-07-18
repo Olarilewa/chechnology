@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getResearchPapers } from '@/lib/entities';
 import Link from 'next/link';
-import { ArrowRight, FileText, BookOpen, Lightbulb, GitBranch, FlaskConical, Globe } from 'lucide-react';
+import { ArrowRight, FileText, BookOpen, Lightbulb, GitBranch, FlaskConical, Globe, type LucideIcon } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import type { ResearchPaper, PaperType } from '@/types/database-v2';
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Research papers, white papers, engineering reports and innovation concepts from Chechnology.',
 };
 
-const TYPE_META: Record<PaperType, { label: string; icon: React.ComponentType<{ size?: number; className?: string }>; colour: string }> = {
+const TYPE_META: Record<PaperType, { label: string; icon: LucideIcon; colour: string }> = {
     research: { label: 'Research Paper', icon: BookOpen, colour: 'brand' },
     whitepaper: { label: 'White Paper', icon: FileText, colour: 'blue' },
     report: { label: 'Engineering Report', icon: FileText, colour: 'amber' },

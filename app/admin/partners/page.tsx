@@ -6,13 +6,25 @@ import { Plus, Trash2, X, ExternalLink } from 'lucide-react';
 import { FormField, SelectInput, TextAreaInput, SubmitButton } from '@/components/ui';
 import type { Partner } from '@/types/database-v2';
 
+interface PartnerFormData {
+    name: string;
+    country: string;
+    partner_type: string;
+    tier: string;
+    description: string;
+    website_url: string;
+    logo_url: string;
+    active: boolean;
+    featured: boolean;
+}
+
 export default function AdminPartnersPage() {
     const [partners, setPartners] = useState<Partner[]>([]);
     const [loading, setLoading] = useState(true);
     const [showForm, setShowForm] = useState(false);
     const [error, setError] = useState('');
     const supabase = createClient();
-    const { register, handleSubmit, reset, formState: { isSubmitting } } = useForm({
+    const { register, handleSubmit, reset, formState: { isSubmitting } } = useForm<PartnerFormData>({
         defaultValues: { partner_type: 'technology', tier: 'standard', active: true, featured: false },
     });
 
@@ -23,7 +35,7 @@ export default function AdminPartnersPage() {
     };
     useEffect(() => { load(); }, []);
 
-    const onSubmit = async (data: Record<string, unknown>) => {
+    const onSubmit = async (data: PartnerFormData) => {
         setError('');
         const { error: dbErr } = await supabase.from('partners').insert([{ ...data, updated_at: new Date().toISOString() }]);
         if (dbErr) { setError(dbErr.message); return; }

@@ -49,7 +49,7 @@ export default async function ProductPage({ params }: Props) {
                                 <span className={`text-xs font-semibold px-3 py-1.5 rounded-full border ${STATUS_STYLE[product.status] || ''}`}>
                                     {product.status}
                                 </span>
-                                {product.industries?.slice(0, 2).map((ind) => (
+                                {product.industries?.slice(0, 2).map((ind: string) => (
                                     <span key={ind} className="text-xs px-3 py-1.5 rounded-full bg-white/4 border border-white/8 text-obsidian-500">{ind}</span>
                                 ))}
                             </div>
@@ -93,7 +93,7 @@ export default async function ProductPage({ params }: Props) {
                                 <AnimatedSection>
                                     <div className="text-xs font-semibold uppercase tracking-widest text-obsidian-500 mb-4">Technology Stack</div>
                                     <div className="flex flex-wrap gap-2">
-                                        {product.technology_stack.map((t) => (
+                                        {product.technology_stack.map((t: string) => (
                                             <span key={t} className="text-sm px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300">{t}</span>
                                         ))}
                                     </div>
@@ -103,7 +103,7 @@ export default async function ProductPage({ params }: Props) {
                                 <AnimatedSection>
                                     <div className="text-xs font-semibold uppercase tracking-widest text-obsidian-500 mb-4">Engineering Disciplines</div>
                                     <div className="flex flex-wrap gap-2">
-                                        {product.engineering_disciplines.map((d) => (
+                                        {product.engineering_disciplines.map((d: string) => (
                                             <span key={d} className="text-sm px-3 py-1.5 rounded-full bg-white/4 border border-white/8 text-obsidian-300">{d}</span>
                                         ))}
                                     </div>

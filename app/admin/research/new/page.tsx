@@ -9,15 +9,45 @@ import Link from 'next/link';
 
 const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
+interface ResearchFormData {
+    title: string;
+    slug: string;
+    subtitle: string;
+    paper_type: string;
+    abstract: string;
+    content: string;
+    authors: string;
+    disciplines: string;
+    tags: string;
+    reading_time_minutes: string;
+    document_url: string;
+    published_date: string;
+    cover_image_url: string;
+    external_url: string;
+    published: boolean;
+    featured: boolean;
+}
+
 export default function NewResearchPage() {
     const router = useRouter();
     const supabase = createClient();
     const [error, setError] = useState('');
-    const { register, handleSubmit, setValue, formState: { isSubmitting } } = useForm({
-        defaultValues: { paper_type: 'research', published: false, featured: false },
+
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        formState: { isSubmitting }
+    } = useForm<ResearchFormData>({
+
+        defaultValues: {
+            paper_type: 'research',
+            published: false,
+            featured: false,
+        },
     });
 
-    const onSubmit = async (data: Record<string, unknown>) => {
+    const onSubmit = async (data: ResearchFormData) => {
         setError('');
         const payload = {
             ...data,

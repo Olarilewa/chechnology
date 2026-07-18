@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getCapabilities } from '@/lib/entities';
 import Link from 'next/link';
-import { ArrowRight, Cpu, Cog, Building2, Zap, Factory, Leaf, HeadphonesIcon } from 'lucide-react';
+import { ArrowRight, Cpu, Cog, Building2, Zap, Factory, Leaf, HeadphonesIcon, type LucideIcon } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import type { Capability, CapabilityCategory } from '@/types/database-v2';
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Our engineering disciplines across technology, mechanical, civil, electrical, and industrial engineering.',
 };
 
-const CATEGORY_META: Record<CapabilityCategory, { label: string; icon: React.ComponentType<{ size?: number; className?: string }>; colour: string }> = {
+const CATEGORY_META: Record<CapabilityCategory, { label: string; icon: LucideIcon; colour: string }> = {
     technology: { label: 'Technology Engineering', icon: Cpu, colour: 'brand' },
     mechanical: { label: 'Mechanical Engineering', icon: Cog, colour: 'amber' },
     civil: { label: 'Civil Engineering', icon: Building2, colour: 'blue' },

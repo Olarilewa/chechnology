@@ -5,12 +5,12 @@ import Link from 'next/link';
 import {
   Package, FolderGit2, BookOpen, Newspaper, Briefcase,
   Camera, Globe2, TrendingUp, Megaphone, FileText,
-  Mail, MessageSquare, Building2, ArrowRight,
+  Mail, MessageSquare, Building2, ArrowRight, type LucideIcon
 } from 'lucide-react';
 
 interface StatCard {
   label: string;
-  icon: React.ComponentType<{ size?: number; className?: string }>;
+  icon: LucideIcon;
   href: string;
   table: string;
   colour: string;

@@ -8,16 +8,36 @@ import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+interface JobFormData {
+    title: string;
+    slug: string;
+    department: string;
+    location: string;
+    employment_type: string;
+    listing_type: string;
+    description: string;
+    responsibilities: string;
+    requirements: string;
+    nice_to_have: string;
+    benefits: string;
+    salary_range: string;
+    closing_date: string;
+    application_url: string;
+    application_email: string;
+    published: boolean;
+    featured: boolean;
+}
+
 
 export default function NewJobPage() {
     const router = useRouter();
     const supabase = createClient();
     const [error, setError] = useState('');
-    const { register, handleSubmit, setValue, formState: { isSubmitting } } = useForm({
+    const { register, handleSubmit, setValue, formState: { isSubmitting } } = useForm<JobFormData>({
         defaultValues: { employment_type: 'full-time', listing_type: 'job', location: 'Remote', published: false, featured: false },
     });
 
-    const onSubmit = async (data: Record<string, unknown>) => {
+    const onSubmit = async (data: JobFormData) => {
         setError('');
         const payload = {
             ...data,

@@ -6,14 +6,14 @@ import {
     ExternalLink, Github, BookOpen, TrendingUp, Megaphone,
     Handshake, Users, Clock, Play, Download, FileText,
     Mail, FolderPlus, Send, Heart, FlaskConical, Book,
-    Code, ArrowRight, X,
+    Code, ArrowRight, X, type LucideIcon
 } from 'lucide-react';
 import type { EntityAction } from '@/types/database-v2';
 import InvestmentForm from '@/components/forms/InvestmentForm';
 import SponsorshipForm from '@/components/forms/SponsorshipForm';
 import ContractRequestForm from '@/components/forms/ContractRequestForm';
 
-const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+const ICON_MAP: Record<string, LucideIcon> = {
     'external-link': ExternalLink,
     'github': Github,
     'book-open': BookOpen,
@@ -196,8 +196,8 @@ export default function EntityActions({
                             whileTap={{ scale: 0.98 }}
                             onClick={() => handleAction(action)}
                             className={`inline-flex items-center gap-2 rounded-full font-semibold transition-all duration-200 ${sizeClass} ${primary
-                                    ? 'btn-primary'
-                                    : 'btn-secondary'
+                                ? 'btn-primary'
+                                : 'btn-secondary'
                                 }`}
                         >
                             <Icon size={size === 'sm' ? 12 : 14} />

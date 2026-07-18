@@ -9,16 +9,33 @@ import Link from 'next/link';
 
 const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const CATEGORIES = ['engineering', 'technology', 'ai', 'innovation', 'case-study', 'business', 'opinion', 'tutorial', 'news'];
+interface ArticleFormData {
+    title: string;
+    slug: string;
+    category: string;
+    excerpt: string;
+    content: string;
+    author_name: string;
+    author_title: string;
+    tags: string;
+    reading_time_minutes: string;
+    cover_image_url: string;
+    author_image_url: string;
+    seo_title: string;
+    seo_description: string;
+    published: boolean;
+    featured: boolean;
+}
 
 export default function NewArticlePage() {
     const router = useRouter();
     const supabase = createClient();
     const [error, setError] = useState('');
-    const { register, handleSubmit, setValue, formState: { isSubmitting } } = useForm({
+    const { register, handleSubmit, setValue, formState: { isSubmitting } } = useForm<ArticleFormData>({
         defaultValues: { category: 'engineering', published: false, featured: false },
     });
 
-    const onSubmit = async (data: Record<string, unknown>) => {
+    const onSubmit = async (data: ArticleFormData) => {
         setError('');
         const publish = data.published as boolean;
         const payload = {

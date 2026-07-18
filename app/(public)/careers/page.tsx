@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getJobListings } from '@/lib/entities';
 import Link from 'next/link';
-import { ArrowRight, MapPin, Clock, Briefcase, GraduationCap, Microscope, Users, Zap, Globe2 } from 'lucide-react';
+import { ArrowRight, MapPin, Clock, Briefcase, GraduationCap, Microscope, Users, Zap, Globe2, type LucideIcon } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import type { JobListing, ListingType } from '@/types/database-v2';
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: 'Jobs, internships, engineering fellowships, and graduate programmes at Chechnology.',
 };
 
-const LISTING_TYPES: { key: ListingType; label: string; icon: React.ComponentType<{ size?: number; className?: string }> }[] = [
+const LISTING_TYPES: { key: ListingType; label: string; icon: LucideIcon }[] = [
   { key: 'job', label: 'Full-Time Roles', icon: Briefcase },
   { key: 'internship', label: 'Internships', icon: GraduationCap },
   { key: 'graduate', label: 'Graduate Programmes', icon: GraduationCap },

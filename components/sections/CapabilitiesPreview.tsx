@@ -1,10 +1,10 @@
 'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, Cpu, Cloud, Brain, Database, Shield, Wifi, Cog, Zap } from 'lucide-react';
+import { ArrowRight, Cpu, Cloud, Brain, Database, Shield, Wifi, Cog, Zap, type LucideIcon } from 'lucide-react';
 import type { Capability } from '@/types/database-v2';
 
-const ICONS: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+const ICONS: Record<string, LucideIcon> = {
     'software-engineering': Cpu,
     'artificial-intelligence': Brain,
     'cloud-infrastructure': Cloud,

@@ -32,7 +32,7 @@ export default async function InsightPage({ params }: Props) {
                     <AnimatedSection>
                         <div className="flex flex-wrap gap-3 mb-6">
                             <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400">{article.category}</span>
-                            {article.tags?.slice(0, 3).map(t => (
+                            {article.tags?.slice(0, 3).map((t: string) => (
                                 <span key={t} className="text-xs px-3 py-1.5 rounded-full bg-white/4 border border-white/8 text-obsidian-500">#{t}</span>
                             ))}
                         </div>

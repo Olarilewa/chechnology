@@ -40,7 +40,7 @@ export default async function ResearchPaperPage({ params }: Props) {
                             <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400">
                                 {TYPE_LABEL[paper.paper_type] || paper.paper_type}
                             </span>
-                            {paper.disciplines?.slice(0, 3).map((d) => (
+                            {paper.disciplines?.slice(0, 3).map((d: string) => (
                                 <span key={d} className="text-xs px-3 py-1.5 rounded-full bg-white/4 border border-white/8 text-obsidian-500">{d}</span>
                             ))}
                         </div>
@@ -104,7 +104,7 @@ export default async function ResearchPaperPage({ params }: Props) {
                 <section className="py-12 border-t border-white/5">
                     <div className="max-w-4xl mx-auto px-6">
                         <div className="flex flex-wrap gap-2">
-                            {paper.tags.map((tag) => (
+                            {paper.tags.map((tag: string) => (
                                 <span key={tag} className="text-sm px-3 py-1.5 rounded-full bg-white/4 border border-white/8 text-obsidian-400">#{tag}</span>
                             ))}
                         </div>
