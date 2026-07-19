@@ -57,13 +57,14 @@ export default async function HomePage() {
             </AnimatedSection>
             <AnimatedSection direction="right">
               <p className="text-obsidian-400 text-lg leading-relaxed mb-6">
-                Chechnology combines software engineering, artificial intelligence, embedded systems,
-                automation, engineering consultancy and multidisciplinary project execution to solve
-                real-world problems at scale.
+                Chechnology combines civil, electrical, mechanical, software, and systems engineering
+                with artificial intelligence, embedded systems, automation, engineering consultancy
+                and multidisciplinary project execution to solve real-world problems at scale.
               </p>
               <p className="text-obsidian-500 leading-relaxed">
-                We are evolving beyond software development into a company capable of leading
-                full-scale engineering projects. Africa-rooted. Globally competitive.
+                We are building a next-generation engineering and technology company capable of delivering
+                intelligent infrastructure, industrial solutions, and innovation-driven projects across sectors.
+                Africa-rooted. Globally competitive.
               </p>
               <div className="flex gap-4 mt-8">
                 <Link href="/about" className="btn-primary group text-sm">
@@ -157,8 +158,8 @@ export default async function HomePage() {
                         )}
                         <div className="absolute top-3 right-3">
                           <span className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${product.status === 'live' ? 'text-green-400 bg-green-500/15 border-green-500/25' :
-                              product.status === 'beta' ? 'text-amber-400 bg-amber-500/15 border-amber-500/25' :
-                                'text-blue-400 bg-blue-500/15 border-blue-500/25'
+                            product.status === 'beta' ? 'text-amber-400 bg-amber-500/15 border-amber-500/25' :
+                              'text-blue-400 bg-blue-500/15 border-blue-500/25'
                             }`}>{product.status}</span>
                         </div>
                       </div>

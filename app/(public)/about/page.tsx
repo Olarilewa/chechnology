@@ -48,10 +48,13 @@ export default function AboutPage() {
                     <AnimatedSection className="max-w-3xl">
                         <div className="section-eyebrow mb-5">About Chechnology</div>
                         <h1 className="text-5xl md:text-7xl font-display font-bold text-white leading-[0.95] mb-6">
-                            Engineering Technology.<br /><span className="gradient-text">Creating Impact.</span>
+                            Engineering Technology.<br /><span className="gradient-text">Powering Possibilities.</span>
                         </h1>
                         <p className="text-obsidian-400 text-xl leading-relaxed max-w-2xl">
-                            Chechnology is an engineering and technology company. We combine software engineering, artificial intelligence, embedded systems, automation, and engineering consultancy to solve real-world problems at scale.
+                            Chechnology is an engineering and technology company. We combine
+                            civil, electrical, mechanical, software, and systems engineering
+                            with artificial intelligence, embedded systems, automation, engineering consultancy
+                            and multidisciplinary project execution to solve real-world problems at scale
                         </p>
                     </AnimatedSection>
                 </div>
@@ -68,7 +71,7 @@ export default function AboutPage() {
                             <div className="space-y-4 text-obsidian-400 leading-relaxed">
                                 <p>The engineering talent across Africa is world-class. The curiosity, the drive, the capability — it exists in abundance. What has been missing is the infrastructure: the platforms, the networks, and the institutional support to translate that talent into impact.</p>
                                 <p>Chechnology was created to build that infrastructure. We exist at the intersection of engineering precision, technology innovation, and African ambition.</p>
-                                <p>We are evolving beyond software development into a company capable of leading multidisciplinary engineering projects through in-house expertise, strategic partnerships, and disciplined execution.</p>
+                                <p>We are building a multidisciplinary engineering and technology company capable of executing complex projects through engineering expertise, strategic partnerships, and disciplined execution.</p>
                             </div>
                         </AnimatedSection>
                         <AnimatedSection direction="right">

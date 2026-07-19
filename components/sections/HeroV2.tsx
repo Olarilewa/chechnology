@@ -70,7 +70,7 @@ export default function HeroV2({ tagline }: Props) {
                     transition={{ duration: 0.6, delay: 0.25 }}
                     className="text-xl md:text-2xl text-obsidian-400 max-w-2xl leading-relaxed mb-4"
                 >
-                    {tagline || 'Engineering Technology. Creating Impact.'}
+                    {tagline || 'Engineering Technology. Powering Possibilities.'}
                 </motion.p>
 
                 <motion.p
@@ -79,8 +79,11 @@ export default function HeroV2({ tagline }: Props) {
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="text-obsidian-500 max-w-xl leading-relaxed mb-12 text-sm"
                 >
-                    Chechnology is a multidisciplinary engineering and technology company. Software engineering,
-                    AI, embedded systems, automation, and consultancy — in service of real-world problems.
+                    Chechnology is a multidisciplinary engineering and technology company delivering solutions
+                    across software, mechanical, civil, electrical and systems engineering. We combine engineering
+                    expertise with AI, automation, embedded systems, and digital technologies to develop infrastructure,
+                    electrification systems, industrial solutions, and intelligent technologies that transform communities
+                    and industries.
                 </motion.p>
 
                 {/* CTAs */}
@@ -107,7 +110,7 @@ export default function HeroV2({ tagline }: Props) {
                     className="relative"
                 >
                     <div className="text-xs font-semibold uppercase tracking-widest text-obsidian-600 mb-4">
-                        Engineering Disciplines
+                        Technology Engineering
                     </div>
                     <div className="flex flex-wrap gap-2">
                         {MARQUEE_ITEMS.map((item, i) => (
