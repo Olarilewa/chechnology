@@ -56,9 +56,9 @@ export default function Footer() {
 
             <div className="flex items-center gap-3">
               {[
-                { icon: Twitter, href: '#', label: 'Twitter' },
-                { icon: Linkedin, href: '#', label: 'LinkedIn' },
-                { icon: Github, href: '#', label: 'GitHub' },
+                { icon: Twitter, href: 'https://x.com/chechnology?s=11&t=N1f1sMx4Y42XFuyrY-rbDg', label: 'Twitter' },
+                { icon: Linkedin, href: 'https://www.linkedin.com/company/chechnology/', label: 'LinkedIn' },
+                { icon: Github, href: 'https://github.com/Chechnology', label: 'GitHub' },
               ].map(({ icon: Icon, href, label }) => (
                 <Link key={label} href={href} target="_blank" aria-label={label}
                   className="w-9 h-9 rounded-xl bg-white/4 border border-white/6 flex items-center justify-center hover:border-brand-500/30 hover:bg-brand-500/10 transition-all">
