@@ -108,10 +108,10 @@ export default function Footer() {
         {/* Bottom */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-obsidian-600">
-            © {new Date().getFullYear()} Chechnology. All rights reserved.
+            © {new Date().getFullYear()} Chechnology. Part of the CHECH ecosystem.
           </p>
           <div className="flex items-center gap-6">
-            <span className="text-xs text-obsidian-700">Engineering Technology. Creating Impact.</span>
+            <span className="text-xs text-obsidian-700">Engineering Technology. Powering Possibilities.</span>
             <Link href="/contact" className="text-xs text-obsidian-600 hover:text-obsidian-400 transition-colors">Privacy Policy</Link>
           </div>
         </div>

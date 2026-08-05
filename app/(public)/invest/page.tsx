@@ -204,7 +204,7 @@ export default function InvestPage() {
                                     <Link href="/contact" className="btn-primary group">
                                         Express Interest <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
                                     </Link>
-                                    <Link href="/products" className="btn-secondary">View Our Products</Link>
+                                    <Link href="/projects" className="btn-secondary">View Our Projects</Link>
                                 </div>
                             </div>
                         </div>
