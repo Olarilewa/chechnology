@@ -10,26 +10,51 @@ import Link from 'next/link';
 const slugify = (s: string) =>
     s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
+// ── Add this interface ──────────────────────────────────────
+interface ProductFormData {
+    name: string;
+    slug: string;
+    tagline: string;
+    description: string;
+    rich_content: string;
+    status: string;
+    cover_image_url: string;
+    external_url: string;
+    github_url: string;
+    documentation_url: string;
+    technology_stack: string;
+    industries: string;
+    engineering_disciplines: string;
+    seo_title: string;
+    seo_description: string;
+    published: boolean;
+    featured: boolean;
+}
+// ────────────────────────────────────────────────────────────
+
 export default function NewProductPage() {
     const router = useRouter();
     const [error, setError] = useState('');
 
-    const { register, handleSubmit, watch, setValue, formState: { isSubmitting } } =
-        useForm({ defaultValues: { status: 'development', published: false, featured: false } });
+    // ── Pass the interface as generic ──
+    const { register, handleSubmit, setValue, formState: { isSubmitting } } =
+        useForm<ProductFormData>({
+            defaultValues: { status: 'development', published: false, featured: false },
+        });
 
-    const onSubmit = async (data: Record<string, unknown>) => {
+    const onSubmit = async (data: ProductFormData) => {
         setError('');
         const payload = {
             ...data,
-            slug: (data.slug as string) || slugify(data.name as string),
-            technology_stack: (data.technology_stack as string)
-                ? (data.technology_stack as string).split(',').map((s: string) => s.trim()).filter(Boolean)
+            slug: data.slug || slugify(data.name),
+            technology_stack: data.technology_stack
+                ? data.technology_stack.split(',').map(s => s.trim()).filter(Boolean)
                 : [],
-            industries: (data.industries as string)
-                ? (data.industries as string).split(',').map((s: string) => s.trim()).filter(Boolean)
+            industries: data.industries
+                ? data.industries.split(',').map(s => s.trim()).filter(Boolean)
                 : [],
-            engineering_disciplines: (data.engineering_disciplines as string)
-                ? (data.engineering_disciplines as string).split(',').map((s: string) => s.trim()).filter(Boolean)
+            engineering_disciplines: data.engineering_disciplines
+                ? data.engineering_disciplines.split(',').map(s => s.trim()).filter(Boolean)
                 : [],
             features: [],
             roadmap: [],
