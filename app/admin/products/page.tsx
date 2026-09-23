@@ -4,6 +4,7 @@ import { createClient } from '@/lib/supabase/client';
 import Link from 'next/link';
 import { Plus, ExternalLink, Trash2, Eye, EyeOff } from 'lucide-react';
 import type { Product } from '@/types/database-v2';
+import { adminDeleteProduct, adminTogglePublish } from '@/app/actions/admin';
 
 export default function AdminProductsPage() {
     const [products, setProducts] = useState<Product[]>([]);
@@ -19,14 +20,28 @@ export default function AdminProductsPage() {
     useEffect(() => { load(); }, []);
 
     const togglePublish = async (id: string, current: boolean) => {
-        await supabase.from('products').update({ published: !current, updated_at: new Date().toISOString() }).eq('id', id);
-        load();
+        const result = await adminTogglePublish('products', id, current);
+
+        if (!result.success) {
+            alert(`Failed to update product: ${result.error}`);
+            return;
+        }
+
+        await load();
     };
+
 
     const deleteProduct = async (id: string) => {
         if (!confirm('Delete this product permanently?')) return;
-        await supabase.from('products').delete().eq('id', id);
-        load();
+
+        const result = await adminDeleteProduct(id);
+
+        if (!result.success) {
+            alert(`Failed to delete product: ${result.error}`);
+            return;
+        }
+
+        await load();
     };
 
     const STATUS_COLOUR: Record<string, string> = {
