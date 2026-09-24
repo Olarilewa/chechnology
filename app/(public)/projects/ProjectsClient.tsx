@@ -12,11 +12,11 @@ import ContractRequestForm from '@/components/forms/ContractRequestForm';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 
 const STATUS_COLORS: Record<string, string> = {
-  'Live':          'bg-green-500/15 text-green-400 border-green-500/25',
+  'Live': 'bg-green-500/15 text-green-400 border-green-500/25',
   'In Development': 'bg-blue-500/15 text-blue-400 border-blue-500/25',
-  'Beta':          'bg-amber-500/15 text-amber-400 border-amber-500/25',
-  'Completed':     'bg-obsidian-500/15 text-obsidian-300 border-obsidian-500/25',
-  'Paused':        'bg-red-500/15 text-red-400 border-red-500/25',
+  'Beta': 'bg-amber-500/15 text-amber-400 border-amber-500/25',
+  'Completed': 'bg-obsidian-500/15 text-obsidian-300 border-obsidian-500/25',
+  'Paused': 'bg-red-500/15 text-red-400 border-red-500/25',
 };
 
 function ProjectCard({
@@ -101,11 +101,11 @@ function ProjectCard({
 
 export default function ProjectsClient({ projects }: { projects: Project[] }) {
   const inHouse = projects.filter((p) => p.project_type === 'in-house');
-  const client  = projects.filter((p) => p.project_type === 'client');
+  const client = projects.filter((p) => p.project_type === 'client');
 
-  const [investTarget, setInvestTarget]   = useState<Project | null>(null);
+  const [investTarget, setInvestTarget] = useState<Project | null>(null);
   const [sponsorTarget, setSponsorTarget] = useState<Project | null>(null);
-  const [showContract, setShowContract]   = useState(false);
+  const [showContract, setShowContract] = useState(false);
 
   return (
     <>
@@ -118,7 +118,7 @@ export default function ProjectsClient({ projects }: { projects: Project[] }) {
               What We're <span className="gradient-text">Building</span>
             </h1>
             <p className="text-obsidian-400 text-lg max-w-2xl leading-relaxed">
-              From in-house products to client partnerships — here's everything Chechnology is creating, developing, and delivering.
+              From in-house projects to client partnerships — here's everything Chechnology is creating, developing, and delivering.
             </p>
           </AnimatedSection>
         </div>
@@ -130,7 +130,7 @@ export default function ProjectsClient({ projects }: { projects: Project[] }) {
           <AnimatedSection className="mb-12 flex items-end justify-between gap-6 flex-wrap">
             <div>
               <div className="section-eyebrow mb-3">In-House</div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white">Products We're Building</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-white">Projects We're Building</h2>
             </div>
           </AnimatedSection>
 
