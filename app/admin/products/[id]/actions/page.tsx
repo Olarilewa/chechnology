@@ -5,6 +5,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { ArrowLeft, Plus, Trash2, Eye, EyeOff, GripVertical } from 'lucide-react';
 import Link from 'next/link';
 import type { EngagementActionType, EntityAction } from '@/types/database-v2';
+import { adminSaveEntityAction, adminDeleteEntityAction, adminToggleEntityAction } from '@/app/actions/admin';
 
 export default function ProductActionsPage() {
     const params = useParams();
@@ -35,24 +36,50 @@ export default function ProductActionsPage() {
 
     const addAction = async () => {
         if (!newKey) return;
-        await supabase.from('entity_actions').upsert({
-            entity_type: 'product', entity_id: id,
-            action_key: newKey, enabled: true,
+
+        const result = await adminSaveEntityAction({
+            entity_type: 'product',
+            entity_id: id,
+            action_key: newKey,
+            enabled: true,
             url: newUrl || null,
             sort_order: entityActions.length,
-        }, { onConflict: 'entity_type,entity_id,action_key' });
-        setNewKey(''); setNewUrl(''); setAdding(false);
-        load();
+        });
+
+        if (!result.success) {
+            alert(`Failed to add action: ${result.error}`);
+            return;
+        }
+
+        setNewKey('');
+        setNewUrl('');
+        setAdding(false);
+
+        await load();
     };
 
     const toggleAction = async (actionId: string, enabled: boolean) => {
-        await supabase.from('entity_actions').update({ enabled: !enabled }).eq('id', actionId);
-        load();
+        const result = await adminToggleEntityAction(actionId, enabled);
+
+        if (!result.success) {
+            alert(`Failed to update action: ${result.error}`);
+            return;
+        }
+
+        await load();
     };
 
     const deleteAction = async (actionId: string) => {
-        await supabase.from('entity_actions').delete().eq('id', actionId);
-        load();
+        if (!confirm('Delete this action?')) return;
+
+        const result = await adminDeleteEntityAction(actionId);
+
+        if (!result.success) {
+            alert(`Failed to delete action: ${result.error}`);
+            return;
+        }
+
+        await load();
     };
 
     const updateUrl = async (actionId: string, url: string) => {
